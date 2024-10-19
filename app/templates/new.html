@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Create New Task{% endblock title %}
+
+{% block content %}
+<form method="POST" action="{{ url_for('create_task') }}">
+    <div class="mb-3">
+        <label for="taskInput" class="form-label">Task Name</label>
+        <input class="form-control" id="taskInput" name="name" type="text" aria-label="Task name input" required>
+    </div>
+    <div class="mb-3">
+        <label for="summaryInput" class="form-label">Summary</label>
+        <input class="form-control" id="summaryInput" name="summary" type="text" aria-label="Summary input" required>
+    </div>
+    <div class="mb-3">
+        <label for="descriptionInput" class="form-label">Description</label>
+        <textarea class="form-control" id="descriptionInput" name="description" rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Task</button>
+</form>
+
+
+
+{% endblock content %}

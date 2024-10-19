@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Edit Task{% endblock title %}
+
+{% block content %}
+<form method="PUT" action="{{ url_for('edit_task', pk=task['id']) }}">
+    <div class="mb-3">
+        <label for="taskInput" class="form-label"><span class="fw-bold"> Current Task:</span> {{ task["name"]
+            }} </label>
+        <input class="form-control" id="taskInput" name="name" type="text" placeholder="Enter Changes Here"
+            aria-label="Task name input" required>
+    </div>
+    <div class="mb-3">
+        <label for="summaryInput" class="form-label"><span class="fw-bold"> Current Summary:</span> {{
+            task["summary"] }} </label>
+        <input class="form-control" id="summaryInput" name="summary" type="text" placeholder="Enter Changes Here"
+            aria-label="Summary input" required>
+    </div>
+    <div class="mb-3">
+        <label for="descriptionInput" class="form-label"><span class="fw-bold"> Current Description:</span> {{
+            task["description"] }} </label>
+        <textarea class="form-control" id="descriptionInput" name="description" placeholder="Enter Changes Here"
+            rows="3" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirm Changes</button>
+</form>
+
+
+
+
+{% endblock content %}
